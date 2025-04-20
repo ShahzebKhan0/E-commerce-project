@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Profile Page</title>
+  <link rel="stylesheet" href="/Styles/profile.css" />
+</head>
+<body>
+  <div class="toggle-theme">
+    <label>
+      <input type="checkbox" id="themeToggle" />
+      <span>🌙 Dark Mode</span>
+    </label>
+  </div>
+
+  <div class="container">
+    <div class="card" id="auth-step">
+      <h2>Create Account</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signUp()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <div class="card" id="login-step" style="display:none;">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="card" id="profile-step" style="display: none;">
+      <h2>Welcome, <span id="user-name-display"></span></h2>
+      <div class="image-section">
+        <img id="profile-image" src="https://via.placeholder.com/100" alt="Profile Image"/>
+        <input type="file" onchange="changeProfilePic(event)" />
+      </div>
+
+      <input type="text" id="name" placeholder="Full Name" readonly />
+      <input type="text" id="address" placeholder="Address" readonly />
+      <input type="tel" id="mobile" placeholder="Mobile Number" readonly />
+      <input type="text" id="pincode" placeholder="Pincode" readonly />
+
+      <div class="actions">
+        <button onclick="toggleEditMode()">Edit Mode</button>
+        <button onclick="saveProfile()" id="saveBtn" style="display:none;">Save</button>
+        <button onclick="changePassword()">Change Password</button>
+        <button onclick="logout()">Logout</button>
+        <button onclick="window.location.href='/index.html'">Back to Store</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Alert -->
+  <div id="custom-alert" class="custom-alert"></div>
+
+  <script src="/Scripts/profile.js"></script>
+</body>
+</html>

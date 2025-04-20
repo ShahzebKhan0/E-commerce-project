@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+   
+    <!-- Css link -->
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <title>E-commerce</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>
+            <a href="/"><strong>E</strong>commerce</a>
+          </h1>
+        </div>
+        <div class="search_input">
+          <input type="search" placeholder="Search for products..." />
+          <div class="search_icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <ul class="nav_links_or_hidden">
+          <li>
+            <a href=""
+              ><i class="fa-solid fa-heart"></i
+            ></a>
+          </li>
+          <li>
+            <div class="shopping_cart" onclick="OpenShoppingCart()">
+              <i class="fa-solid fa-cart-shopping"></i
+            ></div>
+          </li>
+          <li>
+            <a href="/"><i class="fa-solid fa-home"></i></a>
+          </li>
+          <li>
+            <a href="/routes/profile.html"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </li>
+        </ul>
+        <div class="dark-mode-toggle">
+          <label for="dark-mode-checkbox">
+            <i class="fa-solid fa-moon"></i>
+          </label>
+          <input type="checkbox" id="dark-mode-checkbox" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <aside class="filters" id="asideBar">
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter(this)">
+            Category <span>&#9656;</span>
+          </div>
+          <div class="filter-options">
+            <label><input type="checkbox" /> Electronics</label>
+            <label><input type="checkbox" /> Fashion</label>
+            <label><input type="checkbox" /> Books</label>
+            <label><input type="checkbox" /> Home</label>
+            <label><input type="checkbox" /> Toys</label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter(this)">
+            Price <span>&#9656;</span>
+          </div>
+          <div class="filter-options">
+            <label><input type="radio" name="price" /> Under $25</label>
+            <label><input type="radio" name="price" /> $25 - $50</label>
+            <label><input type="radio" name="price" /> $50 - $100</label>
+            <label><input type="radio" name="price" /> $100+</label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter(this)">
+            Brand <span>&#9656;</span>
+          </div>
+          <div class="filter-options">
+            <label><input type="checkbox" /> Samsung</label>
+            <label><input type="checkbox" /> Apple</label>
+            <label><input type="checkbox" /> Sony</label>
+            <label><input type="checkbox" /> Nike</label>
+            <label><input type="checkbox" /> Adidas</label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-header" onclick="toggleFilter(this)">
+            Discount <span>&#9656;</span>
+          </div>
+          <div class="filter-options">
+            <label><input type="radio" name="discount" /> 10% or more</label>
+            <label><input type="radio" name="discount" /> 25% or more</label>
+            <label><input type="radio" name="discount" /> 50% or more</label>
+            <label><input type="radio" name="discount" /> 70% or more</label>
+          </div>
+        </div>
+
+        <!-- Add other filter sections like Rating, Size, Color, etc. here -->
+        <button
+          onclick="resetFilters()"
+          style="
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 20px;
+            width: 100%;
+            transition: background 0.3s;
+          "
+          onmouseover="this.style.backgroundColor='#e60000'"
+          onmouseout="this.style.backgroundColor='#ff4d4d'"
+        >
+          Reset All Filters
+        </button>
+      </aside>
+      <div class="product_section">
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/AppleIphone.webp" alt="Apple iPhone" />
+          <h4>Apple iPhone</h4>
+          <p>₹ 1,00,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+           
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Boult-EarButs.webp" alt="Ear Buds" />
+          <h4>Boult Ear Buds</h4>
+          <p>₹ 500</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+      
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+       
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+      
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Bayblade.webp" alt="Samsung Smart TV" />
+          <h4>Bayblade</h4>
+          <p>₹ 200</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/coffee powder.webp" alt="Samsung Smart TV" />
+          <h4>Coffee Powder</h4>
+          <p>₹ 300</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+           
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/cycle.webp" alt="Samsung Smart TV" />
+          <h4>Samsung Smart TV</h4>
+          <p>₹ 14,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man TO.webp" alt="Samsung Smart TV" />
+          <h4>Men Top</h4>
+          <p>₹ 1000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+           
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Men night.webp" alt="Samsung Smart TV" />
+          <h4>Men Night suit</h4>
+          <p>₹ 900</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Mini Animals.webp" alt="Samsung Smart TV" />
+          <h4>Mini Animal Toy</h4>
+          <p>₹ 1000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+           
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/Man-Night-Suit-set-Multicolor.webp" alt="Man night suit set" />
+          <h4>Man Night Suit Set</h4>
+          <p>₹ 800</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/AppleIphone.webp" alt="Apple iPhone" />
+          <h4>Apple iPhone</h4>
+          <p>₹ 1,00,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/projector.webp" alt="Samsung Smart TV" />
+          <h4>Projector</h4>
+          <p>₹ 12,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/tv.webp" alt="Samsung Smart TV" />
+          <h4>Smart Watch</h4>
+          <p>₹ 12,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/AppleIphone.webp" alt="Apple iPhone" />
+          <h4>Apple iPhone</h4>
+          <p>₹ 1,00,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/tv.webp" alt="Samsung Smart TV" />
+          <h4>Samsung Smart TV</h4>
+          <p>₹ 12,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+        <div class="product_card">
+          <img src="/ExternalVisits/product-images/AppleIphone.webp" alt="Apple iPhone" />
+          <h4>Apple iPhone</h4>
+          <p>₹ 1,00,000</p>
+          <button><a href="/">Buy</a></button>
+        </div>
+
+      </div>
+    </main>
+    <!-- Bottom Bar -->
+    <ul class="nav_links_on_show" id="ShowHamburger">
+      <li>
+        <a href="/routes/wishlist.html"
+          ><i class="fa-solid fa-heart"></i
+        ></a>
+      </li>
+      <li>
+        <div class="shopping_cart" onclick="OpenShoppingCart()">
+          <i class="fa-solid fa-cart-shopping"></i
+        ></div>
+      </li>
+      <li>
+        <a href="/"><i class="fa-solid fa-home"></i></a>
+      </li>
+      <li>
+        <a href="/routes/profile.html"
+          ><i class="fa-solid fa-user"></i
+        ></a>
+      </li>
+      <li>
+        <a>
+          <i id="FilterIcon" class="fa-solid fa-filter" onclick="openAsideBar()"></i>
+          <i id="XmarkClose" class="fa-solid fa-xmark" onclick="closeAsideBar()"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- Shopping Cart -->
+
+    <div class="shopping_cart_container" id="shoppingCartContainer">
+        <div id="ClosedCart" onclick="CloseShoppingCart()"><i class="fa-solid fa-arrow-left"></i> Back</div>
+    </div>
+
+    <!-- Shopping Cart End -->
+
+    <!-- End Bottom Bar -->
+    <footer></footer>
+    <script src="/Scripts/script.js"></script>
+  </body>
+</html>
